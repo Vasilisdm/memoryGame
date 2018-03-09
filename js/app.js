@@ -38,7 +38,7 @@ function shuffle(array) {
  */
 
 let card = document.querySelector('.card');
-let shownCardList = [];
+let openCardList = [];
 
  card.addEventListener('click', function(e){
     rotateCard();
