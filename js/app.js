@@ -42,9 +42,14 @@ let openCardList = [];
 
  card.addEventListener('click', function(e){
     rotateCard();
+    appendCards();
  });
 
  function rotateCard() {
     card.className += " open";
     card.style.fontSize = "33px";
+}
+
+function appendCards() {
+    openCardList += card.firstElementChild.className.split('-').splice(1);
 }
