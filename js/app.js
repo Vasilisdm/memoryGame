@@ -1,7 +1,8 @@
 /*
  * Create a list that holds all of your cards
  */
-
+const allCards =    ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube',
+                    'fa-anchor', 'fa-leaf', 'fa-bicycle'];
 
 /*
  * Display the cards on the page
@@ -40,10 +41,10 @@ function shuffle(array) {
 let card = document.querySelector('.card');
 let openCardList = [];
 
- card.addEventListener('click', function(e){
+card.addEventListener('click', function(e){
     rotateCard();
     appendCards();
- });
+});
 
  function rotateCard() {
     card.className += " open";
