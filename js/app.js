@@ -1,8 +1,8 @@
 /*
  * Create a list that holds all of your cards
  */
-const allCards =    ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube',
-                    'fa-anchor', 'fa-leaf', 'fa-bicycle'];
+const allCards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube',
+                'fa-anchor', 'fa-leaf', 'fa-bicycle'];
 
 /*
  * Display the cards on the page
