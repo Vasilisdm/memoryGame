@@ -47,8 +47,7 @@ card.addEventListener('click', function(e){
 });
 
  function rotateCard() {
-    card.className += " open";
-    card.style.fontSize = "33px";
+    card.className += " open show";
 }
 
 function appendCards() {
