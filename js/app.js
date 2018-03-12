@@ -51,5 +51,5 @@ card.addEventListener('click', function(e){
 }
 
 function appendCards() {
-    openCardList += card.firstElementChild.className.split(" ").splice;
+    openCardList += card.firstElementChild.className.split(" ").splice(1);
 }
