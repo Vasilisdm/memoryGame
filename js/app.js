@@ -55,5 +55,6 @@ function rotateCard(card) {
 }
 
 function appendCards(card) {
-    openCardList += card.firstElementChild.className.split(" ").splice(1) +" ";
+    openCardList += card.firstElementChild.className.split(" ").splice(1)+",";
+    return openCardList;
 }
