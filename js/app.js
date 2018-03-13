@@ -50,17 +50,10 @@ cardList.forEach(function(currentValue) {
     });
 });
 
-
-    // card.addEventListener('click', function(){
-    //     rotateCard();
-    //     appendCards();
-    // });     
-
-
 function rotateCard(card) {
     card.className += " open show";
 }
 
 function appendCards(card) {
-    openCardList += card.firstElementChild.className.split(" ").splice(1);
+    openCardList += card.firstElementChild.className.split(" ").splice(1) +" ";
 }
