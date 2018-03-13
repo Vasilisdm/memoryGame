@@ -1,9 +1,10 @@
 /*
  * Create a list that holds all of your cards
  */
-const allCards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube',
+let allCards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube',
+                'fa-anchor', 'fa-leaf', 'fa-bicycle', 'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube',
                 'fa-anchor', 'fa-leaf', 'fa-bicycle'];
-
+                
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -12,18 +13,18 @@ const allCards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+function shuffle(allCards) {
+    var currentIndex = allCards.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
+        temporaryValue = allCards[currentIndex];
+        allCards[currentIndex] = allCards[randomIndex];
+        allCards[randomIndex] = temporaryValue;
     }
 
-    return array;
+    return allCards;
 }
 
 
@@ -38,18 +39,28 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
-let card = document.querySelector('.card');
+let cardList = document.querySelectorAll('.card');
+
 let openCardList = [];
 
-card.addEventListener('click', function(e){
-    rotateCard();
-    appendCards();
+cardList.forEach(function(currentValue) {
+    currentValue.addEventListener('click',function(){
+        rotateCard(currentValue);
+        appendCards(currentValue);
+    });
 });
 
- function rotateCard() {
+
+    // card.addEventListener('click', function(){
+    //     rotateCard();
+    //     appendCards();
+    // });     
+
+
+function rotateCard(card) {
     card.className += " open show";
 }
 
-function appendCards() {
+function appendCards(card) {
     openCardList += card.firstElementChild.className.split(" ").splice(1);
 }
