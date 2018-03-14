@@ -51,8 +51,8 @@ cardList.forEach(function(currentValue) {
         // checking if the length of openCardList modulo 2 equals 0
         // which means two cards have been flipped 
         // I subtrack 1 from the openCardList because the last element is empty
-        if ((openCardList.split(",").length-1)%2===0) {
-            doCardsMatch();
+        let openCardSymbols = openCardList.split(",");
+        if ((openCardSymbols.length-1)%2===0) {
         }
     });
 });
