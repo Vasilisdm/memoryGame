@@ -49,6 +49,7 @@ cardList.forEach(function(currentValue) {
         appendCards(currentValue);  
         if ((openCardList.length)%2===0) {
             doCardsMatch(openCardList);
+            openCardList = [];
         }
     });
 });
@@ -64,5 +65,5 @@ function appendCards(card) {
 }
 
 function doCardsMatch(symbols) {
-    console.log(symbols);
+    
 }
