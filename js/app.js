@@ -46,7 +46,14 @@ let openCardList = [];
 cardList.forEach(function(currentValue) {
     currentValue.addEventListener('click',function(){
         rotateCard(currentValue);
-        appendCards(currentValue);
+        appendCards(currentValue);  
+
+        // checking if the length of openCardList modulo 2 equals 0
+        // which means two cards have been flipped 
+        // I subtrack 1 from the openCardList because the last element is empty
+        if ((openCardList.split(",").length-1)%2===0) {
+            doCardsMatch();
+        }
     });
 });
 
@@ -57,4 +64,8 @@ function rotateCard(card) {
 function appendCards(card) {
     openCardList += card.firstElementChild.className.split(" ").splice(1)+",";
     return openCardList;
+}
+
+function doCardsMatch() {
+
 }
