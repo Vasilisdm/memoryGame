@@ -45,26 +45,21 @@ let openCardList = [];
 
 cardList.forEach(function(currentValue) {
     currentValue.addEventListener('click',function(){
-
         rotateCard(currentValue);
         appendCards(currentValue);  
-
         if ((openCardList.length)%2===0) {
             doCardsMatch(openCardList);
         }
-        
     });
 });
 
 function rotateCard(card) {
-    card.className += " open show";
+    card.classList.add("open", "show");
 }
 
 function appendCards(card) {
-
     let rotatedCard = card.firstElementChild.className.split(" ").splice(1);
     openCardList.push(rotatedCard);
-    
     return openCardList;
 }
 
