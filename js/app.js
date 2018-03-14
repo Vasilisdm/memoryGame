@@ -59,15 +59,18 @@ function rotateCard(card) {
 }
 
 function appendCards(card) {
-    let rotatedCard = card.firstElementChild.className.split(" ").splice(1);
-    openCardList.push(rotatedCard);
-    return openCardList;
+    openCardList.push(card);
 }
 
 function doCardsMatch(symbols) {
-    card1 = symbols[0];
-    card2 = symbols[1];
-    if (card1[0]===card2[0]) {
-        matchingCards(card1[0],card2[0]);
-    }
+    card1 = symbols[0].firstElementChild.className;
+    card2 = symbols[1].firstElementChild.className;
+    if (card1===card2) {
+        matchingCards(symbols[0],symbols[1]);
+    } 
+}
+
+function matchingCards(symbol1, symbol2) {
+    symbol1.classList.add('match');
+    symbol2.classList.add('match');
 }
