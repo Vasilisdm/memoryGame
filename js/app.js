@@ -65,5 +65,9 @@ function appendCards(card) {
 }
 
 function doCardsMatch(symbols) {
-    
+    card1 = symbols[0];
+    card2 = symbols[1];
+    if (card1[0]===card2[0]) {
+        matchingCards(card1[0],card2[0]);
+    }
 }
