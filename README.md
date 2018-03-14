@@ -1,4 +1,4 @@
-# Memory Game Project
+# Flipping Cards (Memory Game)
 
 ## Table of Contents
 
@@ -6,4 +6,4 @@
 
 ## Instructions
 
-The well known memory game with cards!
+Start flipping the cards and try to match them in pairs in order to win!
