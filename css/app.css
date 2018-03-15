@@ -108,3 +108,21 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+.modal-header .close {
+    display: none;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.modal-footer,
+.modal-header {
+    justify-content: center;
+}
+
+.btn-danger {
+    background-color: #02ccba;
+    border-color: #02ccba;
+}
