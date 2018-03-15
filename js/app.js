@@ -99,16 +99,6 @@ function counterIncrement(moves) {
         gameOver(moves);
     }
 
-    // if (moves<10) {
-    //     stars.style.color = "#FFD700";
-    // } else if (moves===10) {
-    //     stars.style.color = "#c0c0c0"        
-    //     stars.lastElementChild.remove();
-    // } else if (moves===20) {
-    //     stars.style.color = "#cd7f32"
-    //     stars.lastElementChild.remove();           
-    // } 
-
     switch (moves) {
         case 15:
             stars.style.color = "#c0c0c0";
@@ -119,9 +109,6 @@ function counterIncrement(moves) {
             stars.style.color = "#cd7f32";       
             stars.lastElementChild.remove();
             break;
-
-        default: 
-            stars.style.color = "#FFD700";
     }
 }
 
