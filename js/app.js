@@ -45,10 +45,10 @@ let openCardList = [];
 
 let movesCounter = 1;
 
-cardList.forEach(function(currentValue) {
-    currentValue.addEventListener('click',function(){
-        rotateCard(currentValue);
-        appendCards(currentValue);  
+cardList.forEach(function(card) {
+    card.addEventListener('click',function(){
+        rotateCard(card);
+        appendCards(card);  
         if ((openCardList.length)%2===0) {
             doCardsMatch(openCardList);
             openCardList = [];
@@ -91,4 +91,12 @@ function hideCards(symbol1, symbol2) {
 function counterIncrement(moves) {
     let counter = document.querySelector('.moves');
     counter.innerHTML = moves;
+    let totalMatchedCards = document.querySelectorAll('.match');
+    if (totalMatchedCards.length===16) {
+        gameOver(moves);
+    }
+}
+
+function gameOver(score) {
+
 }
