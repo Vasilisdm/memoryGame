@@ -43,6 +43,8 @@ let cardList = document.querySelectorAll('.card');
 
 let openCardList = [];
 
+let movesCounter = 0;
+
 cardList.forEach(function(currentValue) {
     currentValue.addEventListener('click',function(){
         rotateCard(currentValue);
@@ -68,11 +70,12 @@ function doCardsMatch(symbols) {
     if (card1===card2) {
         matchingCards(symbols[0],symbols[1]);
     } else {
-       symbol1 = symbols[0];
-       symbol2 = symbols[1];
-       symbols = [];
-       hideCards(symbol1, symbol2);
+        symbol1 = symbols[0];
+        symbol2 = symbols[1];
+        symbols = [];
+        hideCards(symbol1, symbol2);
     }
+    counterIncrement(movesCounter);    
 }
 
 function matchingCards(symbol1, symbol2) {
@@ -83,4 +86,8 @@ function matchingCards(symbol1, symbol2) {
 function hideCards(symbol1, symbol2) {
     symbol1.classList.remove('open','show');
     symbol2.classList.remove('open','show');
+}
+
+function counterIncrement(moves) {
+    
 }
