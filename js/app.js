@@ -45,6 +45,8 @@ let openCardList = [];
 
 let movesCounter = 1;
 
+let stars = document.querySelector('.stars');
+
 cardList.forEach(function(card) {
     card.addEventListener('click',function(){
         rotateCard(card);
@@ -92,9 +94,20 @@ function counterIncrement(moves) {
     let counter = document.querySelector('.moves');
     counter.innerHTML = moves;
     let totalMatchedCards = document.querySelectorAll('.match');
+
     if (totalMatchedCards.length===16) {
         gameOver(moves);
     }
+
+    // if (moves>=10) {
+    //     stars.firstElementChild.remove();
+    //     stars.style.color = "#FFD700";
+    // } else if (moves>=15) {
+    //     stars.firstElementChild.remove();
+    //     stars.style.color = "#c0c0c0"
+    // } else {
+    //     stars.style.color = "#cd7f32"
+    // }
 }
 
 function gameOver(score) {
