@@ -43,7 +43,7 @@ let cardList = document.querySelectorAll('.card');
 
 let openCardList = [];
 
-let movesCounter = 0;
+let movesCounter = 1;
 
 cardList.forEach(function(currentValue) {
     currentValue.addEventListener('click',function(){
@@ -75,7 +75,7 @@ function doCardsMatch(symbols) {
         symbols = [];
         hideCards(symbol1, symbol2);
     }
-    counterIncrement(movesCounter);    
+    counterIncrement(movesCounter++);    
 }
 
 function matchingCards(symbol1, symbol2) {
@@ -89,5 +89,6 @@ function hideCards(symbol1, symbol2) {
 }
 
 function counterIncrement(moves) {
-    
+    let counter = document.querySelector('.moves');
+    counter.innerHTML = moves;
 }
