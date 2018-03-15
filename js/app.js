@@ -115,5 +115,5 @@ function counterIncrement(moves) {
 function gameOver(score) {
     $('#congratsModal').modal()
     let modalBody = document.querySelector('.modal-body');
-    modalBody.innerHTML = `You have finished the game! Your score is ${score}`;
+    modalBody.innerHTML = `You have finished the game! You just made ${score} moves!`;
 }
