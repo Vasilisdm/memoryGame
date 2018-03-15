@@ -99,15 +99,30 @@ function counterIncrement(moves) {
         gameOver(moves);
     }
 
-    // if (moves>=10) {
-    //     stars.firstElementChild.remove();
+    // if (moves<10) {
     //     stars.style.color = "#FFD700";
-    // } else if (moves>=15) {
-    //     stars.firstElementChild.remove();
-    //     stars.style.color = "#c0c0c0"
-    // } else {
+    // } else if (moves===10) {
+    //     stars.style.color = "#c0c0c0"        
+    //     stars.lastElementChild.remove();
+    // } else if (moves===20) {
     //     stars.style.color = "#cd7f32"
-    // }
+    //     stars.lastElementChild.remove();           
+    // } 
+
+    switch (moves) {
+        case 15:
+            stars.style.color = "#c0c0c0";
+            stars.lastElementChild.remove();
+            break;
+
+        case 20:
+            stars.style.color = "#cd7f32";       
+            stars.lastElementChild.remove();
+            break;
+
+        default: 
+            stars.style.color = "#FFD700";
+    }
 }
 
 function gameOver(score) {
