@@ -98,5 +98,5 @@ function counterIncrement(moves) {
 }
 
 function gameOver(score) {
-
+    window.alert(`Congratulations you have won! Your score is ${score}`);
 }
