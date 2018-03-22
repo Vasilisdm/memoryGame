@@ -40,12 +40,20 @@ function shuffle(allCards) {
  */
 
 let cardList = document.querySelectorAll('.card');
-
 let openCardList = [];
-
 let movesCounter = 1;
-
 let stars = document.querySelector('.stars');
+let restart = document.querySelector('.restart');
+
+restart.addEventListener('click', function(){
+
+    cardList.forEach(function(card){
+        card.classList = 'card';
+    });
+
+    movesCounter = 0;
+    counterIncrement(movesCounter++);
+});
 
 cardList.forEach(function(card) {
     card.addEventListener('click',function(){
@@ -60,7 +68,6 @@ cardList.forEach(function(card) {
 
 function rotateCard(card) {
     card.classList.add("open", "show", "animated", "flipInY");
-    console.log(card)
 }
 
 function appendCards(card) {
@@ -125,3 +132,4 @@ function gameOver(score) {
     let modalBody = document.querySelector('.modal-body');
     modalBody.innerHTML = `You have finished the game! You just made ${score} moves!`;
 }
+
