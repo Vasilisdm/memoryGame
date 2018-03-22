@@ -11,6 +11,10 @@ let movesCounter = 1;
 let stars = document.querySelector('.stars');
 let restart = document.querySelector('.restart');
 
+let list = document.querySelector('.deck');
+for (i = list.children.length; i >= 0; i--) {
+    list.appendChild(list.children[Math.random() * i | 0]);
+}
 
 // game restart
 restart.addEventListener('click', function(){
@@ -21,6 +25,11 @@ restart.addEventListener('click', function(){
 
     movesCounter = 0;
     counterIncrement(movesCounter++);
+
+    let list = document.querySelector('.deck');
+    for (i = list.children.length; i >= 0; i--) {
+        list.appendChild(list.children[Math.random() * i | 0]);
+    }
 
 });
 
