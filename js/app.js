@@ -10,20 +10,6 @@ let movesCounter = 1;
 let stars = document.querySelector('.stars');
 let restart = document.querySelector('.restart');
 
-// Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(allCards) {
-    var currentIndex = allCards.length, temporaryValue, randomIndex;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = allCards[currentIndex];
-        allCards[currentIndex] = allCards[randomIndex];
-        allCards[randomIndex] = temporaryValue;
-    }
-
-    return allCards;
-}
 
 // game restart
 restart.addEventListener('click', function(){
@@ -37,6 +23,7 @@ restart.addEventListener('click', function(){
 
 });
 
+
 cardList.forEach(function(card) {
     card.addEventListener('click',function(){
         rotateCard(card);
@@ -48,13 +35,17 @@ cardList.forEach(function(card) {
     });
 });
 
+
+
 function rotateCard(card) {
     card.classList.add("open", "show", "animated", "flipInY");
 }
 
+
 function appendCards(card) {
     openCardList.push(card);
 }
+
 
 function doCardsMatch(symbols) {
     card1 = symbols[0].firstElementChild.className;
@@ -70,12 +61,14 @@ function doCardsMatch(symbols) {
     counterIncrement(movesCounter++);    
 }
 
+
 function matchingCards(symbol1, symbol2) {
     symbol1.classList.remove("flipInY");
     symbol2.classList.remove("flipInY");
     setInterval(symbol1.classList.add("match", "tada"),200);
     setInterval(symbol2.classList.add("match", "tada"),200);
 }
+
 
 function hideCards(symbol1, symbol2) {
     symbol1.classList.remove("flipInY");
@@ -87,6 +80,7 @@ function hideCards(symbol1, symbol2) {
         symbol2.classList.remove('open','show', "wobble");
     }, 1000);
 }
+
 
 function counterIncrement(moves) {
     let counter = document.querySelector('.moves');
@@ -109,9 +103,25 @@ function counterIncrement(moves) {
     }
 }
 
+
 function gameOver(score) {
     $('#congratsModal').modal()
     let modalBody = document.querySelector('.modal-body');
     modalBody.innerHTML = `You have finished the game! You just made ${score} moves!`;
 }
 
+
+// Shuffle function from http://stackoverflow.com/a/2450976
+function shuffle(allCards) {
+    var currentIndex = allCards.length, temporaryValue, randomIndex;
+
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = allCards[currentIndex];
+        allCards[currentIndex] = allCards[randomIndex];
+        allCards[randomIndex] = temporaryValue;
+    }
+
+    return allCards;
+}
