@@ -126,3 +126,13 @@ h1 {
     background-color: #02ccba;
     border-color: #02ccba;
 }
+
+/* font awesome fab icon */
+
+.fab {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}

@@ -3,6 +3,7 @@ let allCards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cu
                 'fa-anchor', 'fa-leaf', 'fa-bicycle', 'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube',
                 'fa-anchor', 'fa-leaf', 'fa-bicycle'];
                 
+                
 // necessary variables initialization
 let cardList = document.querySelectorAll('.card');
 let openCardList = [];
