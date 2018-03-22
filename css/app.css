@@ -136,3 +136,11 @@ h1 {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
 }
+
+.fa-github:before {
+    color: #000;
+}
+
+.fa-github:before:hover {
+    color: #7c97c7;
+}
