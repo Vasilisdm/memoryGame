@@ -83,8 +83,10 @@ function doCardsMatch(symbols) {
 function matchingCards(symbol1, symbol2) {
     symbol1.classList.remove("flipInY");
     symbol2.classList.remove("flipInY");
-    setInterval(symbol1.classList.add("match", "tada"), 1000);
-    setInterval(symbol2.classList.add("match", "tada"), 1000);
+    setTimeout(function(){
+        symbol1.classList.add("match", "tada");
+        symbol2.classList.add("match", "tada");
+    }, 1000);
 }
 
 function hideCards(symbol1, symbol2) {
