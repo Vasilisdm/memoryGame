@@ -60,6 +60,7 @@ cardList.forEach(function(card) {
 
 function rotateCard(card) {
     card.classList.add("open", "show", "animated", "flipInY");
+    console.log(card)
 }
 
 function appendCards(card) {
@@ -81,22 +82,26 @@ function doCardsMatch(symbols) {
 }
 
 function matchingCards(symbol1, symbol2) {
+    console.log(symbol1)
+    console.log(symbol2)
     symbol1.classList.remove("flipInY");
     symbol2.classList.remove("flipInY");
     setTimeout(function(){
         symbol1.classList.add("match", "tada");
         symbol2.classList.add("match", "tada");
-    }, 1000);
+    }, 200);
 }
 
 function hideCards(symbol1, symbol2) {
+    console.log(symbol1)
+    console.log(symbol2)
     symbol1.classList.remove("flipInY");
     symbol2.classList.remove("flipInY");
     symbol1.classList.add("wobble");
     symbol2.classList.add("wobble");
     setTimeout(function(){
-        symbol1.classList.remove('open','show');
-        symbol2.classList.remove('open','show');
+        symbol1.classList.remove('open','show', "wobble");
+        symbol2.classList.remove('open','show', "wobble");
     }, 1000);
 }
 
