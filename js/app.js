@@ -59,7 +59,7 @@ cardList.forEach(function(card) {
 });
 
 function rotateCard(card) {
-    card.classList.add("open", "show");
+    card.classList.add("open", "show", "animated", "flipInY");
 }
 
 function appendCards(card) {
