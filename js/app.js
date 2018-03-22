@@ -82,19 +82,13 @@ function doCardsMatch(symbols) {
 }
 
 function matchingCards(symbol1, symbol2) {
-    console.log(symbol1)
-    console.log(symbol2)
     symbol1.classList.remove("flipInY");
     symbol2.classList.remove("flipInY");
-    setTimeout(function(){
-        symbol1.classList.add("match", "tada");
-        symbol2.classList.add("match", "tada");
-    }, 200);
+    setInterval(symbol1.classList.add("match", "tada"),200);
+    setInterval(symbol2.classList.add("match", "tada"),200);
 }
 
 function hideCards(symbol1, symbol2) {
-    console.log(symbol1)
-    console.log(symbol2)
     symbol1.classList.remove("flipInY");
     symbol2.classList.remove("flipInY");
     symbol1.classList.add("wobble");
@@ -109,7 +103,6 @@ function counterIncrement(moves) {
     let counter = document.querySelector('.moves');
     counter.innerHTML = moves;
     let totalMatchedCards = document.querySelectorAll('.match');
-
     if (totalMatchedCards.length===16) {
         gameOver(moves);
     }
