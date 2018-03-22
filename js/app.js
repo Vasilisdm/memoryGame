@@ -83,13 +83,19 @@ function doCardsMatch(symbols) {
 function matchingCards(symbol1, symbol2) {
     symbol1.classList.remove("flipInY");
     symbol2.classList.remove("flipInY");
-    setInterval(symbol1.classList.add("match", "tada"), 500);
-    setInterval(symbol2.classList.add("match", "tada"), 500);
+    setInterval(symbol1.classList.add("match", "tada"), 1000);
+    setInterval(symbol2.classList.add("match", "tada"), 1000);
 }
 
 function hideCards(symbol1, symbol2) {
-    symbol1.classList.remove('open','show');
-    symbol2.classList.remove('open','show');
+    symbol1.classList.remove("flipInY");
+    symbol2.classList.remove("flipInY");
+    symbol1.classList.add("wobble");
+    symbol2.classList.add("wobble");
+    setTimeout(function(){
+        symbol1.classList.remove('open','show');
+        symbol2.classList.remove('open','show');
+    }, 1000);
 }
 
 function counterIncrement(moves) {
