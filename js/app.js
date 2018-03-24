@@ -1,8 +1,3 @@
-// list of the available cards
-let allCards = ['fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube',
-                'fa-anchor', 'fa-leaf', 'fa-bicycle', 'fa-diamond', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube',
-                'fa-anchor', 'fa-leaf', 'fa-bicycle'];
-                
                 
 // necessary variables initialization
 let cardList = document.querySelectorAll('.card');
@@ -11,10 +6,9 @@ let movesCounter = 1;
 let stars = document.querySelector('.stars');
 let restart = document.querySelector('.restart');
 
-let list = document.querySelector('.deck');
-for (i = list.children.length; i >= 0; i--) {
-    list.appendChild(list.children[Math.random() * i | 0]);
-}
+// all available cards
+let allCards = document.querySelector('.deck');
+shuffle(allCards);
 
 // game restart
 restart.addEventListener('click', function(){
@@ -26,9 +20,7 @@ restart.addEventListener('click', function(){
     movesCounter = 0;
     counterIncrement(movesCounter++);
 
-    for (i = list.children.length; i >= 0; i--) {
-        list.appendChild(list.children[Math.random() * i | 0]);
-    }
+    shuffle(allCards);
 
 });
 
@@ -120,17 +112,8 @@ function gameOver(score) {
 }
 
 
-// Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(allCards) {
-    var currentIndex = allCards.length, temporaryValue, randomIndex;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = allCards[currentIndex];
-        allCards[currentIndex] = allCards[randomIndex];
-        allCards[randomIndex] = temporaryValue;
+function shuffle(list) {
+    for (i = list.children.length; i >= 0; i--) {
+        list.appendChild(list.children[Math.random() * i | 0]);
     }
-
-    return allCards;
 }
