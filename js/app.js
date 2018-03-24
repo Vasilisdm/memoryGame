@@ -26,7 +26,6 @@ restart.addEventListener('click', function(){
     movesCounter = 0;
     counterIncrement(movesCounter++);
 
-    let list = document.querySelector('.deck');
     for (i = list.children.length; i >= 0; i--) {
         list.appendChild(list.children[Math.random() * i | 0]);
     }
