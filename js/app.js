@@ -169,14 +169,18 @@ function counterIncrement(moves) {
 
 function gameOver(score) {
     stopTimer();
-
     // modal gets called 
     $('#congratsModal').modal()
 
     let gameScore = document.querySelector('.game-score');
+    let gameTime = document.querySelector('.game-time');
 
     gameScore.innerHTML = `You just made ${score} moves!`;
 
+    time_seconds = document.querySelector('.seconds').innerHTML;
+    time_minutes = document.querySelector('.minutes').innerHTML;
+
+    gameTime.innerHTML = `You needed ${time_minutes} minute(s) and ${time_seconds}seconds <br> to complete the game!`
 }
 
 
