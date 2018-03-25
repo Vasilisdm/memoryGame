@@ -3,7 +3,10 @@ let cardList = document.querySelectorAll('.card');
 let openCardList = [];
 let movesCounter = 1;
 let stars = document.querySelector('.stars');
-
+let time_seconds = document.querySelector('.seconds');
+let time_minutes = document.querySelector('.minutes');
+let counter = 0;
+let minutes = 0;
 // stars html collection
 let starsCollection = stars.children;
 let restart = document.querySelector('.restart');
@@ -62,6 +65,31 @@ playAgain.onclick = function(restart) {
     document.querySelector(".restart").click();
 }
 
+
+    
+function startTimer() {
+    counter++;
+    seconds = counter;
+    if (counter === 60) {
+        minutes++;
+        seconds = 0;
+        counter = 0;
+    }
+    // document.querySelector('.timer').innerHTML = zeroPrefix(timerMin) + ':' + zeroPrefix(sec);
+    time_seconds.innerHTML = zeroPrefix(seconds);
+    time_minutes.innerHTML = zeroPrefix(minutes);
+}
+
+let intervalID = window.setInterval(startTimer, 1000);
+
+function zeroPrefix(number) {
+    if (number < 10) {
+        return '0' + number;
+    } else {
+        return number;
+    }
+
+}
 
 cardList.forEach(function(card) {
     card.addEventListener('click',function(){
