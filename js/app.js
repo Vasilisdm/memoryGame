@@ -123,12 +123,12 @@ function counterIncrement(moves) {
     }
 
     switch (moves) {
-        case 3:
+        case 15:
             stars.style.color = "#c0c0c0";
             starsCollection.item(0).style.display = "none";
             break;
 
-        case 5:
+        case 20:
             stars.style.color = "#cd7f32";       
             starsCollection.item(1).style.display = "none";
             break;
