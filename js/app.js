@@ -64,18 +64,6 @@ function stopTimer() {
 restart.onclick = gameReset(restart);
 
 
-// if the no button is pressed just hide the modal
-playNoMore.onclick = function(){
-    $('#congratsModal').modal('hide');
-}
-
-
-playAgain.onclick = function(restart) {
-    $('#congratsModal').modal('hide');
-    document.querySelector(".restart").click();
-}
-
-
 cardList.forEach(function(card) {
     card.addEventListener('click',function(){
         rotateCard(card);
@@ -181,6 +169,18 @@ function gameOver(score) {
     time_minutes = document.querySelector('.minutes').innerHTML;
 
     gameTime.innerHTML = `You needed ${time_minutes} minute(s) and ${time_seconds}seconds <br> to complete the game!`
+}
+
+
+// if the no button is pressed just hide the modal
+playNoMore.onclick = function(){
+    $('#congratsModal').modal('hide');
+}
+
+
+playAgain.onclick = function(restart) {
+    $('#congratsModal').modal('hide');
+    document.querySelector(".restart").click();
 }
 
 
