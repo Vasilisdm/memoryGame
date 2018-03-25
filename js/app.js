@@ -167,7 +167,6 @@ function counterIncrement(moves) {
 
 
 function gameOver(score) {
-    // stop timer
     stopTimer();
 
     // modal gets called 
@@ -197,6 +196,9 @@ function gameReset(restart) {
             starsCollection.item(i).style.display = "inline-block";            
         }
         stars.style.color = "#FFD700";
+
+        counter = 0;
+        minutes = 0;
     
     });
 
