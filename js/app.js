@@ -202,6 +202,7 @@ function gameReset(restart) {
         }
         stars.style.color = "#FFD700";
 
+        stopTimer();
         seconds = 0;
         counter = 0;
         minutes = 0;
