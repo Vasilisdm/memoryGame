@@ -197,8 +197,12 @@ function gameReset(restart) {
         }
         stars.style.color = "#FFD700";
 
+        seconds = 0;
         counter = 0;
         minutes = 0;
+
+        time_seconds.innerHTML = zeroPrefix(seconds);
+        time_minutes.innerHTML = zeroPrefix(minutes);
     
     });
 
