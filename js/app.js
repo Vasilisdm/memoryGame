@@ -4,6 +4,7 @@ let openCardList = [];
 let movesCounter = 1;
 let stars = document.querySelector('.stars');
 let restart = document.querySelector('.restart');
+let playAgain = document.querySelector('.btn-success');
 
 
 // all available cards
@@ -34,11 +35,17 @@ function shuffle(list) {
     for (i = list.children.length; i >= 0; i--) {
         list.appendChild(list.children[Math.random() * i | 0]);
     }
-    
+
 }
 
 
 restart.onclick = gameReset(restart);
+
+
+playAgain.onclick = function(restart) {
+    $('#congratsModal').modal('hide');
+    document.querySelector(".restart").click();
+}
 
 
 cardList.forEach(function(card) {
@@ -122,11 +129,14 @@ function counterIncrement(moves) {
 
 
 function gameOver(score) {
+
     // modal gets called 
     $('#congratsModal').modal()
-    
+
     let gameScore = document.querySelector('.game-score');
+
     gameScore.innerHTML = `You just made ${score} moves!`;
+
 }
 
 
