@@ -6,9 +6,11 @@ let movesCounter = 1;
 let stars = document.querySelector('.stars');
 let restart = document.querySelector('.restart');
 
+
 // all available cards
 let allCards = document.querySelector('.deck');
 shuffle(allCards);
+
 
 // game restart
 restart.addEventListener('click', function(){
@@ -106,9 +108,11 @@ function counterIncrement(moves) {
 
 
 function gameOver(score) {
+    // modal gets called 
     $('#congratsModal').modal()
-    let modalBody = document.querySelector('.modal-body');
-    modalBody.innerHTML = `You have finished the game! You just made ${score} moves!`;
+    
+    let gameScore = document.querySelector('.game-score');
+    gameScore.innerHTML = `You just made ${score} moves!`;
 }
 
 
