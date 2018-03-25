@@ -59,12 +59,6 @@ function stopTimer() {
     clearInterval(intervalID);
 }
 
-if(document.querySelectorAll('.show').length>0){
-	intervalID = setInterval(startTimer, 1000);
-}
-
-// let intervalID = setInterval(startTimer, 1000);
-
 
 // when restart is clicked the gameReset function is called
 restart.onclick = gameReset(restart);
@@ -148,6 +142,10 @@ function hideCards(symbol1, symbol2) {
 
 
 function counterIncrement(moves) {
+    // alongside with the first move start the timer
+    if (moves === 1) {
+        intervalID = setInterval(startTimer, 1000);
+    }
     let counter = document.querySelector('.moves');
     counter.innerHTML = moves;
     let totalMatchedCards = document.querySelectorAll('.match');
