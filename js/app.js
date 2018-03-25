@@ -59,6 +59,9 @@ function stopTimer() {
     clearInterval(intervalID);
 }
 
+if(document.querySelectorAll('.show').length>0){
+	intervalID = setInterval(startTimer, 1000);
+}
 
 // let intervalID = setInterval(startTimer, 1000);
 
@@ -138,8 +141,8 @@ function hideCards(symbol1, symbol2) {
     symbol1.classList.add("wobble");
     symbol2.classList.add("wobble");
     setTimeout(function(){
-        symbol1.classList.remove('open','show', "wobble");
-        symbol2.classList.remove('open','show', "wobble");
+        symbol1.classList.remove('open','show', "wobble", "animated");
+        symbol2.classList.remove('open','show', "wobble", "animated");
     }, 1000);
 }
 
