@@ -66,6 +66,15 @@ playAgain.onclick = function(restart) {
 }
 
 
+function zeroPrefix(number) {
+    if (number < 10) {
+        return '0' + number;
+    } else {
+        return number;
+    }
+
+}
+
     
 function startTimer() {
     counter++;
@@ -80,16 +89,14 @@ function startTimer() {
     time_minutes.innerHTML = zeroPrefix(minutes);
 }
 
+
+function stopTimer() {
+    clearInterval(intervalID);
+  }
+
+
 let intervalID = window.setInterval(startTimer, 1000);
 
-function zeroPrefix(number) {
-    if (number < 10) {
-        return '0' + number;
-    } else {
-        return number;
-    }
-
-}
 
 cardList.forEach(function(card) {
     card.addEventListener('click',function(){
@@ -179,6 +186,8 @@ function counterIncrement(moves) {
 
 
 function gameOver(score) {
+    // stop timer
+    stopTimer();
 
     // modal gets called 
     $('#congratsModal').modal()
