@@ -8,6 +8,7 @@ let stars = document.querySelector('.stars');
 let starsCollection = stars.children;
 let restart = document.querySelector('.restart');
 let playAgain = document.querySelector('.btn-success');
+let playNoMore = document.querySelector('.play-no-more');
 
 
 // all available cards
@@ -46,8 +47,14 @@ function shuffle(list) {
 
 }
 
-
+// when restart is clicked the gameReset function is called
 restart.onclick = gameReset(restart);
+
+
+// if the no button is pressed just hide the modal
+playNoMore.onclick = function(){
+    $('#congratsModal').modal('hide');
+}
 
 
 playAgain.onclick = function(restart) {
