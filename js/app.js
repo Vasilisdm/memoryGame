@@ -1,4 +1,3 @@
-                
 // necessary variables initialization
 let cardList = document.querySelectorAll('.card');
 let openCardList = [];
@@ -12,19 +11,34 @@ let allCards = document.querySelector('.deck');
 shuffle(allCards);
 
 
-// game restart
-restart.addEventListener('click', function(){
+function gameReset(restart) {
 
-    cardList.forEach(function(card){
-        card.classList = 'card';
+    restart.addEventListener('click', function(){
+
+        cardList.forEach(function(card){
+            card.classList = 'card';
+        });
+    
+        movesCounter = 0;
+        counterIncrement(movesCounter++);
+    
+        shuffle(allCards);
+    
     });
 
-    movesCounter = 0;
-    counterIncrement(movesCounter++);
+}
 
-    shuffle(allCards);
 
-});
+function shuffle(list) {
+
+    for (i = list.children.length; i >= 0; i--) {
+        list.appendChild(list.children[Math.random() * i | 0]);
+    }
+    
+}
+
+
+restart.onclick = gameReset(restart);
 
 
 cardList.forEach(function(card) {
@@ -116,8 +130,3 @@ function gameOver(score) {
 }
 
 
-function shuffle(list) {
-    for (i = list.children.length; i >= 0; i--) {
-        list.appendChild(list.children[Math.random() * i | 0]);
-    }
-}
