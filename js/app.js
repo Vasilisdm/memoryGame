@@ -3,6 +3,9 @@ let cardList = document.querySelectorAll('.card');
 let openCardList = [];
 let movesCounter = 1;
 let stars = document.querySelector('.stars');
+
+// stars html collection
+let starsCollection = stars.children;
 let restart = document.querySelector('.restart');
 let playAgain = document.querySelector('.btn-success');
 
@@ -24,6 +27,11 @@ function gameReset(restart) {
         counterIncrement(movesCounter++);
     
         shuffle(allCards);
+
+        for (let i = 0; i < stars.childElementCount; i++) {
+            starsCollection.item(i).style.display = "inline-block";            
+        }
+        stars.style.color = "#FFD700";
     
     });
 
@@ -115,14 +123,14 @@ function counterIncrement(moves) {
     }
 
     switch (moves) {
-        case 15:
+        case 3:
             stars.style.color = "#c0c0c0";
-            stars.lastElementChild.remove();
+            starsCollection.item(0).style.display = "none";
             break;
 
-        case 20:
+        case 5:
             stars.style.color = "#cd7f32";       
-            stars.lastElementChild.remove();
+            starsCollection.item(1).style.display = "none";
             break;
     }
 }
