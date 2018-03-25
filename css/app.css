@@ -127,6 +127,10 @@ h1 {
     border-color: #02ccba;
 }
 
+.btn-success {
+    margin-right: 15px;
+}
+
 /* font awesome fab icon */
 
 .fab {
