@@ -109,6 +109,14 @@ h1 {
     cursor: pointer;
 }
 
+.timer {
+    margin-left: 50px;
+}
+
+.time-text {
+    margin-right: 5px;
+}
+
 .modal-header .close {
     display: none;
 }
