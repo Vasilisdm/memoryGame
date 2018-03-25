@@ -3,10 +3,13 @@ let cardList = document.querySelectorAll('.card');
 let openCardList = [];
 let movesCounter = 1;
 let stars = document.querySelector('.stars');
+
+// timer section
 let time_seconds = document.querySelector('.seconds');
 let time_minutes = document.querySelector('.minutes');
 let counter = 0;
 let minutes = 0;
+
 // stars html collection
 let starsCollection = stars.children;
 let restart = document.querySelector('.restart');
@@ -19,50 +22,12 @@ let allCards = document.querySelector('.deck');
 shuffle(allCards);
 
 
-function gameReset(restart) {
-
-    restart.addEventListener('click', function(){
-
-        cardList.forEach(function(card){
-            card.classList = 'card';
-        });
-    
-        movesCounter = 0;
-        counterIncrement(movesCounter++);
-    
-        shuffle(allCards);
-
-        for (let i = 0; i < stars.childElementCount; i++) {
-            starsCollection.item(i).style.display = "inline-block";            
-        }
-        stars.style.color = "#FFD700";
-    
-    });
-
-}
-
-
 function shuffle(list) {
 
     for (i = list.children.length; i >= 0; i--) {
         list.appendChild(list.children[Math.random() * i | 0]);
     }
 
-}
-
-// when restart is clicked the gameReset function is called
-restart.onclick = gameReset(restart);
-
-
-// if the no button is pressed just hide the modal
-playNoMore.onclick = function(){
-    $('#congratsModal').modal('hide');
-}
-
-
-playAgain.onclick = function(restart) {
-    $('#congratsModal').modal('hide');
-    document.querySelector(".restart").click();
 }
 
 
@@ -95,7 +60,23 @@ function stopTimer() {
   }
 
 
-let intervalID = window.setInterval(startTimer, 1000);
+let intervalID = setInterval(startTimer, 1000);
+
+
+// when restart is clicked the gameReset function is called
+restart.onclick = gameReset(restart);
+
+
+// if the no button is pressed just hide the modal
+playNoMore.onclick = function(){
+    $('#congratsModal').modal('hide');
+}
+
+
+playAgain.onclick = function(restart) {
+    $('#congratsModal').modal('hide');
+    document.querySelector(".restart").click();
+}
 
 
 cardList.forEach(function(card) {
@@ -199,3 +180,24 @@ function gameOver(score) {
 }
 
 
+function gameReset(restart) {
+
+    restart.addEventListener('click', function(){
+
+        cardList.forEach(function(card){
+            card.classList = 'card';
+        });
+    
+        movesCounter = 0;
+        counterIncrement(movesCounter++);
+    
+        shuffle(allCards);
+
+        for (let i = 0; i < stars.childElementCount; i++) {
+            starsCollection.item(i).style.display = "inline-block";            
+        }
+        stars.style.color = "#FFD700";
+    
+    });
+
+}
