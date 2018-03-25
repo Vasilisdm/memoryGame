@@ -75,7 +75,14 @@ function rotateCard(card) {
 
 
 function appendCards(card) {
+
     openCardList.push(card);
+
+    // if the same card is clicked twice remove the same card from 
+    // openCardList object
+    if (openCardList[0] === openCardList[1]) {
+        openCardList.pop(card);
+    }
 }
 
 
