@@ -130,6 +130,10 @@ h1 {
     justify-content: center;
 }
 
+.modal-header p {
+    margin-bottom: 0;
+}
+
 .btn-danger {
     background-color: #02ccba;
     border-color: #02ccba;
