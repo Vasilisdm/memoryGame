@@ -7,6 +7,7 @@ let stars = document.querySelector('.stars');
 // timer section
 let time_seconds = document.querySelector('.seconds');
 let time_minutes = document.querySelector('.minutes');
+let intervalID = 0;
 let counter = 0;
 let minutes = 0;
 
@@ -49,7 +50,6 @@ function startTimer() {
         seconds = 0;
         counter = 0;
     }
-    // document.querySelector('.timer').innerHTML = zeroPrefix(timerMin) + ':' + zeroPrefix(sec);
     time_seconds.innerHTML = zeroPrefix(seconds);
     time_minutes.innerHTML = zeroPrefix(minutes);
 }
@@ -57,10 +57,10 @@ function startTimer() {
 
 function stopTimer() {
     clearInterval(intervalID);
-  }
+}
 
 
-let intervalID = setInterval(startTimer, 1000);
+// let intervalID = setInterval(startTimer, 1000);
 
 
 // when restart is clicked the gameReset function is called
