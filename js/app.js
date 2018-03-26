@@ -56,7 +56,13 @@ function startTimer() {
 
 
 function stopTimer() {
-    clearInterval(intervalID);
+    clearInterval(intervalID);        
+    seconds = 0;
+    counter = 0;
+    minutes = 0;
+
+    time_seconds.innerHTML = '00';
+    time_minutes.innerHTML = '00';
 }
 
 
@@ -203,12 +209,7 @@ function gameReset(restart) {
         stars.style.color = "#FFD700";
 
         stopTimer();
-        seconds = 0;
-        counter = 0;
-        minutes = 0;
 
-        time_seconds.innerHTML = zeroPrefix(seconds);
-        time_minutes.innerHTML = zeroPrefix(minutes);
     
     });
 
