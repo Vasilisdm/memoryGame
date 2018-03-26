@@ -57,12 +57,6 @@ function startTimer() {
 
 function stopTimer() {
     clearInterval(intervalID);        
-    seconds = 0;
-    counter = 0;
-    minutes = 0;
-
-    time_seconds.innerHTML = '00';
-    time_minutes.innerHTML = '00';
 }
 
 
