@@ -131,7 +131,7 @@ function hideCards(symbol1, symbol2) {
     setTimeout(function(){
         symbol1.classList.remove('open','show', "wobble", "animated");
         symbol2.classList.remove('open','show', "wobble", "animated");
-    }, 1000);
+    }, 700);
 }
 
 
@@ -210,7 +210,6 @@ function gameReset(restart) {
 
         stopTimer();
 
-    
     });
 
 }
