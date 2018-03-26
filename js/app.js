@@ -133,6 +133,7 @@ function counterIncrement(moves) {
     // alongside with the first move start the timer
     if (moves === 1) {
         intervalID = setInterval(startTimer, 1000);
+        console.log(intervalID);
     }
     let counter = document.querySelector('.moves');
     counter.innerHTML = moves;
@@ -202,7 +203,7 @@ function gameReset(restart) {
             starsCollection.item(i).style.display = "inline-block";            
         }
         stars.style.color = "#FFD700";
-
+        stopTimer();
         resetTimer();
     });
 
