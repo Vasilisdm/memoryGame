@@ -208,8 +208,15 @@ function gameReset(restart) {
         }
         stars.style.color = "#FFD700";
 
-        stopTimer();
-
+        resetTimer();
     });
 
+}
+
+function resetTimer(){
+    counter = 0;
+    seconds = 0;
+    minutes = 0;
+    document.querySelector('.minutes').innerHTML = '00';
+    document.querySelector('.seconds').innerHTML = '00';
 }
