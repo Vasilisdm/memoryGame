@@ -138,6 +138,7 @@ function counterIncrement(moves) {
     counter.innerHTML = moves;
     let totalMatchedCards = document.querySelectorAll('.match');
     if (totalMatchedCards.length===16) {
+        stopTimer();
         gameOver(moves);
     }
 
@@ -156,7 +157,6 @@ function counterIncrement(moves) {
 
 
 function gameOver(score) {
-    stopTimer();
     // modal gets called 
     $('#congratsModal').modal()
 
