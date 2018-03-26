@@ -179,6 +179,7 @@ playNoMore.onclick = function(){
 
 
 playAgain.onclick = function(restart) {
+    resetTimer();
     $('#congratsModal').modal('hide');
     document.querySelector(".restart").click();
 }
