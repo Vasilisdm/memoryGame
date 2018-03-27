@@ -32,36 +32,33 @@ function shuffle(list) {
 }
 
 
-function zeroPrefix(number) {
-    if (number < 10) {
-        return '0' + number;
-    } else {
-        return number;
-    }
-
-}
-
-    
-function startTimer() {
-    counter++;
-    seconds = counter;
-    if (counter === 60) {
-        minutes++;
-        seconds = 0;
-        counter = 0;
-    }
-    time_seconds.innerHTML = zeroPrefix(seconds);
-    time_minutes.innerHTML = zeroPrefix(minutes);
-}
-
-
-function stopTimer() {
-    clearInterval(intervalID);        
-}
-
-
 // when restart is clicked the gameReset function is called
 restart.onclick = gameReset(restart);
+
+
+function gameReset(restart) {
+
+    restart.addEventListener('click', function(){
+
+        cardList.forEach(function(card){
+            card.classList = 'card';
+        });
+    
+        movesCounter = 0;
+        counterIncrement(movesCounter++);
+    
+        shuffle(allCards);
+
+        for (let i = 0; i < stars.childElementCount; i++) {
+            starsCollection.item(i).style.display = "inline-block";            
+        }
+        stars.style.color = "#FFD700";
+        stopTimer();
+        resetTimer();
+
+    });
+
+}
 
 
 cardList.forEach(function(card) {
@@ -186,28 +183,35 @@ playAgain.onclick = function(restart) {
 }
 
 
-function gameReset(restart) {
-
-    restart.addEventListener('click', function(){
-
-        cardList.forEach(function(card){
-            card.classList = 'card';
-        });
-    
-        movesCounter = 0;
-        counterIncrement(movesCounter++);
-    
-        shuffle(allCards);
-
-        for (let i = 0; i < stars.childElementCount; i++) {
-            starsCollection.item(i).style.display = "inline-block";            
-        }
-        stars.style.color = "#FFD700";
-        stopTimer();
-        resetTimer();
-    });
+// adding a zero in front of minutes or seconds
+// if seconds/minutes are less than ten
+function zeroPrefix(number) {
+    if (number < 10) {
+        return '0' + number;
+    } else {
+        return number;
+    }
 
 }
+
+    
+function startTimer() {
+    counter++;
+    seconds = counter;
+    if (counter === 60) {
+        minutes++;
+        seconds = 0;
+        counter = 0;
+    }
+    time_seconds.innerHTML = zeroPrefix(seconds);
+    time_minutes.innerHTML = zeroPrefix(minutes);
+}
+
+
+function stopTimer() {
+    clearInterval(intervalID);        
+}
+
 
 function resetTimer(){
     counter = 0;
