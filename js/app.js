@@ -33,31 +33,6 @@ function shuffle(list) {
 }
 
 
-// when restart is clicked the gameReset function is called
-restart.addEventListener('click', gameReset);
-
-
-function gameReset() {
-
-        cardList.forEach(function(card){
-            card.classList = 'card';
-        });
-    
-        movesCounter = 0;
-        counterIncrement();
-    
-        shuffle(allCards);
-
-        for (let i = 0; i < stars.childElementCount; i++) {
-            starsCollection.item(i).style.display = "inline-block";            
-        }
-        stars.style.color = "#FFD700";
-        stopTimer();
-        resetTimer();
-
-}
-
-
 cardList.forEach(function(card) {
     card.addEventListener('click',function(){
         rotateCard(card);
@@ -177,6 +152,31 @@ playNoMore.onclick = function(){
 playAgain.onclick = function() {
     $('#congratsModal').modal('hide');
     document.querySelector(".restart").click();
+}
+
+
+// when restart is clicked the gameReset function is called
+restart.addEventListener('click', gameReset);
+
+
+function gameReset() {
+
+        cardList.forEach(function(card){
+            card.classList = 'card';
+        });
+    
+        movesCounter = 0;
+        counterIncrement();
+    
+        shuffle(allCards);
+
+        for (let i = 0; i < stars.childElementCount; i++) {
+            starsCollection.item(i).style.display = "inline-block";            
+        }
+        stars.style.color = "#FFD700";
+        stopTimer();
+        resetTimer();
+
 }
 
 
