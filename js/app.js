@@ -44,7 +44,6 @@ function gameReset() {
         });
     
         movesCounter = 0;
-        // movesCounter += 1;
         counterIncrement();
     
         shuffle(allCards);
