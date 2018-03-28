@@ -1,25 +1,26 @@
 // necessary variables initialization
-let cardList = document.querySelectorAll('.card');
+const cardList = document.querySelectorAll('.card');
 let openCardList = [];
-let movesCounter = 1;
-let stars = document.querySelector('.stars');
+let movesCounter = 0;
+const stars = document.querySelector('.stars');
 
 // timer section
-let time_seconds = document.querySelector('.seconds');
-let time_minutes = document.querySelector('.minutes');
+const time_seconds = document.querySelector('.seconds');
+const time_minutes = document.querySelector('.minutes');
 let intervalID = 0;
 let counter = 0;
 let minutes = 0;
+let seconds = 0;
 
 // stars html collection
-let starsCollection = stars.children;
-let restart = document.querySelector('.restart');
-let playAgain = document.querySelector('.btn-success');
-let playNoMore = document.querySelector('.play-no-more');
+const starsCollection = stars.children;
+const restart = document.querySelector('.restart');
+const playAgain = document.querySelector('.btn-success');
+const playNoMore = document.querySelector('.play-no-more');
 
 
 // all available cards
-let allCards = document.querySelector('.deck');
+const allCards = document.querySelector('.deck');
 shuffle(allCards);
 
 
@@ -33,19 +34,18 @@ function shuffle(list) {
 
 
 // when restart is clicked the gameReset function is called
-restart.onclick = gameReset(restart);
+restart.addEventListener('click', gameReset);
 
 
-function gameReset(restart) {
-
-    restart.addEventListener('click', function(){
+function gameReset() {
 
         cardList.forEach(function(card){
             card.classList = 'card';
         });
     
         movesCounter = 0;
-        counterIncrement(movesCounter++);
+        // movesCounter += 1;
+        counterIncrement();
     
         shuffle(allCards);
 
@@ -55,8 +55,6 @@ function gameReset(restart) {
         stars.style.color = "#FFD700";
         stopTimer();
         resetTimer();
-
-    });
 
 }
 
@@ -102,7 +100,8 @@ function doCardsMatch(symbols) {
         symbols = [];
         hideCards(symbol1, symbol2);
     }
-    counterIncrement(movesCounter++);    
+    movesCounter += 1;
+    counterIncrement();    
 }
 
 
@@ -126,21 +125,19 @@ function hideCards(symbol1, symbol2) {
 }
 
 
-function counterIncrement(moves) {
+function counterIncrement() {
     // alongside with the first move start the timer
-    if (moves === 1) {
+    if (movesCounter === 1) {
         intervalID = setInterval(startTimer, 1000);
-        console.log(intervalID);
     }
     let counter = document.querySelector('.moves');
-    counter.innerHTML = moves;
+    counter.innerHTML = movesCounter;
     let totalMatchedCards = document.querySelectorAll('.match');
     if (totalMatchedCards.length===16) {
-        stopTimer();
-        gameOver(moves);
+        gameOver();
     }
 
-    switch (moves) {
+    switch (movesCounter) {
         case 15:
             stars.style.color = "#c0c0c0";
             starsCollection.item(0).style.display = "none";
@@ -154,19 +151,21 @@ function counterIncrement(moves) {
 }
 
 
-function gameOver(score) {
+function gameOver() {
+    stopTimer();    
+
     // modal gets called 
     $('#congratsModal').modal()
 
     let gameScore = document.querySelector('.game-score');
     let gameTime = document.querySelector('.game-time');
 
-    gameScore.innerHTML = `You just made ${score} moves!`;
+    gameScore.innerHTML = `You just made ${movesCounter} moves!`;
 
-    time_seconds = document.querySelector('.seconds').innerHTML;
-    time_minutes = document.querySelector('.minutes').innerHTML;
+    let game_seconds = document.querySelector('.seconds').innerHTML;
+    let game_minutes = document.querySelector('.minutes').innerHTML;
 
-    gameTime.innerHTML = `You needed ${time_minutes} minute(s) and ${time_seconds}seconds <br> to complete the game!`
+    gameTime.innerHTML = `You needed ${game_minutes} minute(s) and ${game_seconds}seconds <br> to complete the game!`
 }
 
 
@@ -176,8 +175,7 @@ playNoMore.onclick = function(){
 }
 
 
-playAgain.onclick = function(restart) {
-    resetTimer();
+playAgain.onclick = function() {
     $('#congratsModal').modal('hide');
     document.querySelector(".restart").click();
 }
