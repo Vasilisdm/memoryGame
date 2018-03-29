@@ -6,4 +6,4 @@
 
 ## Instructions
 
-Start flipping the cards and try to match them in pairs in order to win!
+Match all cards in pairs in order to win!
