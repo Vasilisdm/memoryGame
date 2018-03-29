@@ -137,6 +137,19 @@ h1 {
     margin-bottom: 0;
 }
 
+.star-rating-container {
+    display: flex;
+    justify-content: center;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: space-evenly;
+    width: 120px;
+    list-style: none;
+    padding-left: 0;
+}
+
 .btn-danger {
     background-color: #02ccba;
     border-color: #02ccba;
