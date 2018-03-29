@@ -1,4 +1,4 @@
-# Flipping Cards (Memory Game)
+# Matching Cards
 
 ## Table of Contents
 
