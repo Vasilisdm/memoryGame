@@ -139,7 +139,7 @@ function gameOver() {
     let game_seconds = document.querySelector('.seconds').innerHTML;
     let game_minutes = document.querySelector('.minutes').innerHTML;
 
-    gameTime.innerHTML = `You needed ${game_minutes} minute(s) and ${game_seconds}seconds <br> to complete the game!`
+    gameTime.innerHTML = `You needed ${game_minutes} minute(s) and ${game_seconds}seconds <br> to complete the game!`;
 }
 
 
