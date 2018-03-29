@@ -140,6 +140,41 @@ function gameOver() {
     let game_minutes = document.querySelector('.minutes').innerHTML;
 
     gameTime.innerHTML = `You needed ${game_minutes} minute(s) and ${game_seconds}seconds <br> to complete the game!`;
+
+    let hiddenStars = 0;
+    let starRating = document.querySelector('.star-rating');
+
+    // live collection of star-rating
+    let starRatingCollection = document.querySelector('.star-rating').children;
+
+    for (let i = 0; i  < starsCollection.length; i++) {
+        if (starsCollection.item(i).style.display === 'none') {
+            hiddenStars++; 
+        }       
+    }
+
+    switch (hiddenStars) {
+
+        case 2:
+            starRatingCollection.item(0).style.display = 'inline-block';
+            starRatingCollection.item(0).style.color = '#cd7f32';
+            break;
+
+        case 1:
+            starRatingCollection.item(0).style.display = 'inline-block';
+            starRatingCollection.item(0).style.color = '#c0c0c0';
+            starRatingCollection.item(1).style.display = 'inline-block';
+            starRatingCollection.item(1).style.color = '#c0c0c0';
+            break;
+
+        case 0:
+            for (const modalStar of starRatingCollection) {
+                modalStar.style.display = 'inline-block';
+                modalStar.style.color = '#FFD700';
+            }
+            break;
+    }
+    
 }
 
 
