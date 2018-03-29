@@ -147,8 +147,8 @@ h1 {
     justify-content: space-evenly;
     width: 120px;
     list-style: none;
+    height: 20px;
     padding-left: 0;
-    margin-bottom: 5px;
 } 
 
 .star-rating li {
