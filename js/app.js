@@ -200,6 +200,10 @@ function gameReset() {
             card.classList = 'card';
         });
     
+        // emptying openCardsList array 
+        // in order not to to carry functionality from a previous game
+        openCardList = [];
+
         movesCounter = 0;
         counterIncrement();
     
