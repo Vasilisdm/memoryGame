@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Game process](#Game process)
+* [Game process](#Game_process)
 * [Contributors](#Contributors)
 
 ## Instructions
@@ -20,6 +20,5 @@ Match all cards in pairs in order to win!
 
 ## Contributors
 
-Vasilis Dimitriou
-
+[Vasilis Dimitriou](https://github.com/Vasilisdm)
 
