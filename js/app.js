@@ -64,8 +64,11 @@ function appendCards(card) {
 
 
 function doCardsMatch(symbols) {
+    // card represents the i element within the li
     let card1 = symbols[0].firstElementChild.className;
     let card2 = symbols[1].firstElementChild.className;
+
+    // symbol represents the li element of the ul
     let symbol1 = symbols[0];
     let symbol2 = symbols[1];
     
