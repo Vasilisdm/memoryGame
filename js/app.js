@@ -36,7 +36,7 @@ function shuffle(list) {
 cardList.forEach(function(card) {
     card.addEventListener('click',function(){
         rotateCard(card);
-        appendCards(card);  
+        appendCards(card); 
         if ((openCardList.length)%2===0) {
             doCardsMatch(openCardList);
             openCardList = [];
@@ -64,16 +64,19 @@ function appendCards(card) {
 
 
 function doCardsMatch(symbols) {
-    card1 = symbols[0].firstElementChild.className;
-    card2 = symbols[1].firstElementChild.className;
-    if (card1===card2) {
+
+    let card1 = symbols[0].firstElementChild.className;
+    let card2 = symbols[1].firstElementChild.className;
+    let symbol1 = symbols[0];
+    let symbol2 = symbols[1];
+
+     if (card1 === card2) {
         matchingCards(symbols[0],symbols[1]);
     } else {
-        symbol1 = symbols[0];
-        symbol2 = symbols[1];
         symbols = [];
         hideCards(symbol1, symbol2);
     }
+
     movesCounter += 1;
     counterIncrement();    
 }
