@@ -14,6 +14,7 @@ Match all cards in pairs in order to win!
 * The cards are being shuffled
 * The timer starts with your first move
 * If two cards are matched the background of each of them turns to green
+* You wont be able to try matching both a matchd and an unmatched card
 * Your goal is to match every card pair right
 * The game ends by the time all card pairs are successfully matched
 * A congratulations modal appears, with your stats
