@@ -64,14 +64,21 @@ function appendCards(card) {
 
 
 function doCardsMatch(symbols) {
-
     let card1 = symbols[0].firstElementChild.className;
     let card2 = symbols[1].firstElementChild.className;
     let symbol1 = symbols[0];
     let symbol2 = symbols[1];
 
-     if (card1 === card2) {
-        matchingCards(symbols[0],symbols[1]);
+    // symbols.forEach(function(symbol){
+    //     console.log(symbol);
+    //     if (symbol.classList.contains("match") === true) {
+    //         openCardList.pop(symbol);
+           
+    //     }
+    // })
+    
+    if (card1 === card2) {
+        matchingCards(symbol1,symbol2);
     } else {
         symbols = [];
         hideCards(symbol1, symbol2);
