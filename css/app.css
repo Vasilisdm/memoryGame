@@ -177,3 +177,55 @@ h1 {
 .fa-github:before {
     color: #000;
 }
+
+/* Media queries */
+@media (max-width: 992px) {
+
+    .deck {
+        width: 500px;
+        min-height: 560px;
+    }
+
+    .deck .card {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 756px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .deck {
+        width: 420px;
+        min-height: 460px;
+    }
+
+    .deck .card {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .deck {
+        width: 320px;
+        min-height: 400px;
+    }
+
+    .deck .card {
+        width: 60px;
+        height: 60px;
+    }
+
+    .score-panel {
+        width: 300px;
+    }
+}
+
+
