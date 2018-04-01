@@ -34,12 +34,21 @@ function shuffle(list) {
 
 
 cardList.forEach(function(card) {
-    card.addEventListener('click',function(){
-        rotateCard(card);
-        appendCards(card); 
-        if ((openCardList.length)%2===0) {
-            doCardsMatch(openCardList);
-            openCardList = [];
+    // added the eventTarget in order to use it later
+    card.addEventListener('click',function(eventTarget){
+        // check to see if the li contains the match class
+        // if so then I stopPropagation in order to be, 
+        // impossible for user to try to match both a matched and 
+        //  an unmatched card
+        if (card.classList.contains('match')) {
+            eventTarget.stopPropagation();
+        } else {
+            rotateCard(card);
+            appendCards(card); 
+            if ((openCardList.length)%2===0) {
+                doCardsMatch(openCardList);
+                openCardList = [];
+            }
         }
     });
 });
